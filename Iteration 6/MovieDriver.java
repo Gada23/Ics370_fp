@@ -11,9 +11,9 @@ public class MovieDriver {
     private static final String MOVIE_PEOPLE_IGNORED = "R ignored ";
 
     public MovieDriver() throws SQLException{
-        String url = "jdbc:mysql://localhost:3306/omdb_final";
+        String url = "jdbc:mysql://192.168.64.3:3306/omdb_final";
         String user = "root";
-        String password = "Aeroplane1994";
+        String password = "";
 
         connection = DriverManager.getConnection(url, user, password);
     }
