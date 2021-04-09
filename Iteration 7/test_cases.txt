@@ -1,0 +1,393 @@
+
+Test Case ID:  1
+
+Test Case Title: Movie Does Not Exist, Song Does Not Exist, Person Does Not Exists, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A movie (native_name, title) does not exist. An entry is created in the "movies" table.
+No song (title) exists. An entry is created in the "songs" table.
+No person (stage_name) exists. An entry is created in the "people" table.
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exits between the song (title) and people (stage_name).
+An entry is created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We use will the following a row in "mspr_test_data":-
+   ID: 1
+   native_name: The World of The Witchers II
+   year_made: 2003
+   stage_name: Woodrow S. Tondala
+   title: Ghostly Notes
+   role: Composer
+
+Expected Result:
+         [1] The last column should be updated with  M created S created P created MS created SP created.
+         [2] The movie (The World of Witchers II, 2003) should be created in the "movies" table.
+         [3] The song (Ghostly Notes) should be created in the "songs" table.
+         [4] The person (Woodrow S. Tondala) should be crated in the "people" table.
+         [5] The relationship between the movie (The World of Witchers II, 2003) and the song (Ghostly Notes).
+         [6] The relationship between the song (Ghostly Notes) and the person (Woodrow S. Tondala) will be created with role "Composer".
+Actual Result:  [ x ] Passing  [  ] Failing
+
+==================================================================================================================
+
+Test Case ID:  2
+
+Test Case Title: Movie Does Not Exist, Song Does Not Exist, Person Exists, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A movie (native_name, title) does not exist. An entry is created in the "movies" table.
+
+No song (title) exists. An entry is created in the "songs" table.
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exits between the song (title) and people (stage_name).
+An entry is created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We are going to use a the following row from the "msrp_test_data":- 
+   ID: 2
+   native_name: The Return of the Fiery Kraken
+   year_made: 2008
+   title: Kraken Dance
+   stage_name: Bradd Pitt
+   role: Main Composer
+
+Expected Result:
+         [1] The last column should be updated with:-  M created S created P ignored MS created SP created.
+         [2] A movie (The Return of the Fiery Kraken, 2008) should be created in the "movies" table.
+         [3] A song (Kraken Dance) should be created in the "songs" table.
+         [4] The movie-song relationship of the movie (The Return of the Fiery Kraken, 2008) and the song (Kraken Dance) is created in the "movie_people".
+         [5] Created a relationship between song(Kraken Dance) and person (Bradd Pitt) with role "Main Composer" 
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+===========================================================================================================================
+
+Test Case ID:  3
+
+Test Case Title: Movie Does Not Exist, Song Exists, Person Does Not Exist, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A movie (native_name, title) does not exist. An entry is created in the "movies" table.
+
+No person (stage_name) exists. An entry is created in the "people" table.
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exits between the song (title) and people (stage_name).
+An entry is created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   ID: 3
+   native_name: The Treaty of Terror
+   year_made: 2016
+   title: శ్రీ జానకీ దేవీ సీమంతమలరే
+   stage_name: Vicarius Icarium
+   role: Music Director
+   
+Expected Result:
+         [1] The last column should be updated with  M created S ignored P created MS created SP created.
+         [2] A movie (The Treaty of Terror, 2016) should be created in the "movies" table.
+         [3] A person (Vicarius Icarium) should be created in the "people" table.
+         [3] The movie-song relation mentioned in #2 and the song (శ్రీ జానకీ దేవీ సీమంతమలరే) above will be created in the "movie_song" table.
+         [4] The song-people relation mentioned between the song (శ్రీ జానకీ దేవీ సీమంతమలరే) and the person (Vicarius Icarium) will be created.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+
+===============================================================================================================
+
+Test Case ID:  4
+
+Test Case Title: Movie Does Not Exist, Song Exists, Person Exists, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A movie (native_name, title) does not exist. An entry is created in the "movies" table.
+
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exits between the song (title) and people (stage_name).
+An entry is created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+We are going to use the following row from "mpr_test_data" table:-
+   ID: 4
+   native_name: The Doomsayer's Doom
+   year_made: 2017
+   stage_name: Angeline Jolie
+   title: శ్రీ జానకీ దేవీ సీమంతమలరే
+   role: singer
+
+Expected Result:
+         [1] The last column should be updated with M created S ignored P ignored MS created SP created.
+         [2] A movie (Frozen, 2013) should be created in the "movies" table.
+         [3] The movie-song relation mentioned in #5 above will be created in the "movie_song" table.
+         [4] The song-people relation mentioned in #6 above will be created in the "song_people" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+==============================================================================================================
+
+Test Case ID:  5
+
+Test Case Title: Movie Does Not Exist, Song Exists, Person Exists, Movie-Song Relation Does Not Exist, Song-People Relation Exists.
+
+Test Case Description:
+
+A movie (native_name, title) does not exist. An entry is created in the "movies" table.
+
+A person (stage_name) does not exist. An entry is created in the "people" table. 
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We are going to use the following from "mspr_test_data" table:-
+   ID: 5
+   native_name: The Landing Site
+   year_made: 1999
+   title: శ్రీ జానకీ దేవీ సీమంతమలరే
+   stage_name: Vicarius Icarium
+   role: Music Director
+
+Expected Result:
+         [1] The last column should be updated with M created S ignored P ignored MS created SP ignored.
+         [2] A movie (The Landing Site, 1999) should be created in the "movies" table.
+         [4] The relationship between the movie (The Landing Site, 1999) and the song (శ్రీ జానకీ దేవీ సీమంతమలరే) 
+             is created in the "movie_song" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+=====================================================================================================
+
+Test Case ID:  6
+
+Test Case Title: Movie Exists, Song Does Not Exists, Person Does Not Exist, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A song (title) does not exist. An entry is createdin the "songs" table.
+
+A person (stage_name) does not exist. An entry is created in the "people" table. 
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exists between the song (title) and people (stage_name, role).
+An entry is created in the "song_people" table. 
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We will use the following row from the "mspr_test_data" table.
+   ID: 6
+   native_name: The Treaty of Terror
+   year_made: 2016
+   title: Merry Merry Boat
+   stage_name: Inkwell LaSagna
+   role: singer
+
+Expected Result:
+
+         [1] The last column should be updated with:- M Ignored S created P created MS created SP created.
+         [2] The person(Inkwell LaSagna) is created in the "people" table.
+         [3] The song (Merry Merry Boat) is created in the "songs" table.
+         [4] The relationship between the movie (The Treaty of Terror, 2016) and song (Merry Merry Boat) is created in the "movie_song" table.
+         [5] The relationship between the song (Merry Merry Boat) and the person (Inkwell LaSagna) is created in the "song_people" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+=============================================================================================================
+
+Test Case ID:  7
+
+Test Case Title: Movie Exists, Song Does Not Exists, Person Exists, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+A song (title) does not exist. An entry is createdin the "songs" table.
+
+No relation exits between the movie (native_name, year_made) and song (title).
+An entry is created in the "movie_song" table.
+
+No relation exists between the song (title) and people (stage_name, role).
+An entry is created in the "song_people" table. 
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   ID: 7
+   native_name: The Landing Site
+   year_made: 1999
+   title: The Wakeup Callers
+   stage_name: Bradd Pitt
+   role: singer
+   
+
+Expected Result:
+         [1] The last column should be updated with  M Ignored, S created, P ignored, MS created, SP created.
+         [2] The song (The Wakeup Callers) will be created in the "songs" table.
+         [3] The relationship between the movie (The Landing Sit, 1999) and the song (The Wakeup Callers) will be created
+             in the table "movie_songs".
+         [4] The relationship between the song (The Wakeup Callers) and the person (Bradd Pitt) will be created with role "singer"
+             in the "song_people" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+===============================================================================================
+
+Test Case ID:  8
+
+Test Case Title: Movie Exists, Song Exists, Person Does Not Exist, Movie-Song Relation Does Not Exist, Song-People Relation Does Not Exist.
+
+Test Case Description:
+
+Person (stage_name) does not exist. New entry will be created in the "people" table.
+Movie-Song Relation does not exist. New entry will be crated in the "movie_song" table.
+Song-People Relation does not exist. New entry will be created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   id: 8
+   native_name: సుమతి
+   year_made: 1942
+   title: శ్రీ జానకీ దేవీ సీమంతమలరే
+   stage_name: Kyler Krushev Junior
+   role: singer
+   
+
+Expected Result:
+
+         [1] The last column should be updated with  M ignored S ignored P created MS created SP created.
+         [2] Person (Kyler Krushev Junior) is created in the "people" database.
+         [3] The movie-song relation between movie (సుమతి, 1942) and song (శ్రీ జానకీ దేవీ సీమంతమలరే) is created in "movie_song" table.
+         [4] The song-people relation between song (శ్రీ జానకీ దేవీ సీమంతమలరే) and person (Kyler Krushev Junior) is created.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+========================================================================================================
+
+Test Case ID:  9
+
+Test Case Title: Movie Exists, Song Exists, Person Does Not Exist, Movie-Song Relation Exists, Song-People Relation does not exist.
+
+Test Case Description:
+
+Person (stage_name) does not exist. New entry will be created in the "people" table.
+Song-People Relation does not exist. New entry will be created in the "song_people" table.
+
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We will use the following row from "mpr_test_data" :- 
+   ID: 9
+   native_name: The World of The Witchers II
+   year_made: 2003
+   title: Ghostly Notes
+   stage_name: Ricky Rindan
+   role: singer
+
+Expected Result:
+         [1] The last column should be updated with  M Ignored S ignored P created MS ignored SP created.
+         [2] Person (Ricky Rindan) is created in the "people" database.
+         [3] The relationship between the song (Ghostly Notes) and the person (Ricky Rindan) is created with the role "singer"
+             in the "song_people" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+=========================================================================================================================
+
+Test Case ID:  10
+
+Test Case Title: Movie Exists, Song Exists, Person Exists, Movie-Song Relation Does not Exist, Song-People Relation exists.
+
+Test Case Description:
+Movie-Song Relation does not exist. New entry will be created in the "movie_song" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   ID: 10
+   native_name: The World of The Witchers II
+   year_made: 2003
+   title: Kraken Dance
+   stage_name: Brad Pitt
+   role: Main Composer
+
+Expected Result:
+         [1] The last column should be updated with M Ignored S ignored P ignored MS created SP ignored.
+         [2] The relationship between movie(The World of The Witchers II, 2003) and the song (Kraken Dance)
+             was created with the role "Main Composer" in the "movie_song" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+============================================================================================================
+
+Test Case ID:  11
+
+Test Case Title: Movie Exists, Song Exists, Person Exists, Movie-Song Relation Exists, Song-People Relation does not exist.
+
+Test Case Description:
+
+Song-People Relation does not exist. New entry will be created in the "song_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   ID: 11
+   native_name: The Return of the Fiery Kraken
+   year_made: 2008
+   title: Kraken Dance
+   stage_name: Vicarius Icarium
+   role: singer
+
+Expected Result:
+
+         [1] The last column should be updated with M Ignored S ignored P ignored MS ignored SP created.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+=====================================================================================================================
+
+Test Case ID:  12
+
+Test Case Title: Movie Exists, Song Exists, People Exists, Movie-Song Relation Exists, Song-People Relation exists.
+
+Test Case Description:
+
+All entries exist. They will be ignored.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+We need to have a row in "mpr_test_data" with the following properties:- 
+   ID: 12
+   native_name: The Treaty of Terror
+   year_made: 2016
+   title: Merry Merry Boat
+   stage_name: Inkwell LaSagna
+   role: singer
+
+Expected Result:
+         [1] The last column should be updated with M ignored S ignored P ignored MS ignored SP ignored.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+=================================================================================================
