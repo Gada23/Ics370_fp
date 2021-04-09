@@ -1,0 +1,174 @@
+Test Case ID:  1
+
+Test Case Title: Movie Exists, People Exists,  Movie-People Relation Exist.
+
+Test Case Description:
+
+The target movie, people and movie-people relation exist.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+1. We are going to use the following row in "mpr_test_data":-  
+   id: 86
+   native_name: Trudell
+   year_made: 2005
+   stage_name: Angeline Jolie
+   role: Executive Producer
+   
+
+2. The movie(Hunk, 1987) exists.
+
+3. A person (Angeline Jolie) exists.
+
+4. A relation between the movie in #2 and the person in #3 should exist with role "Executive Producer"
+   and screen name "?".
+
+
+Expected Result:
+
+         [1] The last column should be updated with:- M ignored P ignored R ignored.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+------------------------------------------------------------------------------------------------
+
+Test Case ID:  2
+
+Test Case Title: Movie Doesn't Exist, People Doesn't Exist,  Movie-People Relation Doesn't Exist.
+
+Test Case Description:
+
+The movie (native_name,title) does not exist. An entry will be created in the "movies" table.
+The movie-people relation does not exist. An entry will be created in the "movie_people" table. 
+
+Test Case Data: (Provide the specifics of test data from your example)
+1. We need to have a row in "mpr_test_data" with the following properties:-
+   id: 139
+   native_name: Powerball Puff
+   year_made: 2021
+   stage_name: Knuth Kennedime
+   role: Antagonist
+   screen_name: Knuthy
+
+2. No movie should exist in the "movies" table with the native name "Powerball Puff" 
+   and the year "2021".
+
+3. No people should exist in the "people" table with the title: "Knuth Kennedime".
+
+4. No movie-people relation exists between #2 and #3 with the role "Antagonist" and screen name "Knuthy".
+
+
+Expected Result:
+         [1] The last column should be updated with M created P created R created.
+         [2] Movie (Powerball Puff, 2021) is created in the database.
+         [3] People with stage name "Knuth Kennedime" is created in "people" database
+         [4] A relation between #2 and #3 is also created with the role "Antagonist" and screen name "Knuthy".
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+-------------------------------------------------------------------------------------------------------------------
+
+Test Case ID:  3
+
+Test Case Title: Movie Exists, People Exist,  Movie-People Relation Doesn't Exist.
+
+Test Case Description:
+
+The movie-people relation does not exist. New entry will be created in the "movie_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+1. We will use the following row to demonstrate the test case.
+   id: 35
+   native_name: Mr. & Mrs. Smith
+   year_made: 2005
+   stage_name: Brad Pitt
+   role: Leading Actor
+   screen_name: John Smith
+
+2. A movie should exist in the "movies" table with the native name "Mr. & Mrs. Smith" 
+   and the year "2005".
+
+3. A person should exist in the "people" table with the stage_name: "Brad Pitt".
+
+4. No relation between #1 and #2 above exists with role "Leading Actor" and screen name "John Smith".
+
+
+Expected Result:
+
+         [1] The last column should be updated with M ignored P ignored R created.
+         [2] The relation in #4 above is created.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+---------------------------------------------------------------------------------------------------------------
+
+Test Case ID:  4
+
+Test Case Title: Movie Exist, People Doesn't Exist,  Movie-People Relation Doesn't Exist.
+
+Test Case Description:
+
+The person(stage_name) does not exist. New entry will be createdin the "people" table.
+The movie-people relation does not exist. New entry will be created in the "movie_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+1. We need to have a row in "mpr_test_data" with the following properties:-
+   id: 140
+   native_name: Powerball Puff
+   year_made: 2021
+   stage_name: Scottard Scurry
+   role: Leading Actor
+   screen_name: Scotty
+
+2. A movie should exist in the "movies" table with the native name "Powerball Puff" 
+   and the year "2021".
+
+3. No person should exist in the "people" table with the stage_name: "Scottard Scurry".
+
+4. No relation between #1 and #2 above exists with role "Leading Actor" and screen name "Scotty".
+
+Expected Result:
+
+         [1] The last column should be updated with M ignored P created R created.
+         [2] The movie (Powerball Puff, 2021) is ignored.
+         [3] A person (Scottard Scurry) is created in the "people" table.
+         [4] The movie-person relationship with role "Leading Actor" and screen name "Scotty" is created in the "movie_people" table.
+
+Actual Result:  [ x ] Passing  [  ] Failing
+
+-------------------------------------------------------------------------------
+
+
+Test Case ID:  5
+
+Test Case Title: Movie Doesn't Exist, Person Exists,  Movie-People Relation Doesn't Exist.
+
+Test Case Description:
+
+The movie (native_name, year_made) does not exist. New entry will be created in the "movies" table.
+The movie-people relation does not exist. New entry will be created in the "movie_people" table.
+
+Test Case Data: (Provide the specifics of test data from your example)
+
+1. We need to have a row in "mpr_test_data" with the following properties:-
+   id: 141
+   native_name: Wizards in the Rain
+   year_made: 2001
+   stage_name: Scottard Scurry
+   role: Minor Actor
+   screen_name: Bazeira
+
+2. No movie should exist in the "movies" table with the native name "Wizards in the Rain" 
+   and the year "2001".
+
+3. A person should exist in the "people" table with the title: "Scottard Scurry".
+
+4. No relation between #1 and #2 above exists with the role "Minor Actor" and screen name "Bazeira"
+
+Expected Result:
+         [1] The last column should be updated with M created P ignored R created.
+         [2] The movie "Wizards in the Rain" of year "2001" is created in the movies table.
+         [3] The relationship between the movie in #2 above and the person with the stage name "Scottard Scurry" is
+             created.
+
+Actual Result:  [ x ] Passing  [  ] Failing
